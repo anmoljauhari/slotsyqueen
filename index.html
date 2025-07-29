@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sureshot Queen</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '575419838237482');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=575419838237482&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="vip-header">
+  <span class="kind-icon left">👑</span>
+  <div class="vip-title">
+    SURE<span>SHOT</span> QUEEN
+  </div>
+  <span class="kind-icon right">👑</span>
+</div>
+
+<div class="elite-badge">
+  <i class="fa fa-gem bounce-icon"></i> Elite Rewards Await
+</div>
+
+  <div class="profile">
+    <img src="https://i.ibb.co/whMnFSTv/queen.jpg" alt="Profile" />
+  </div>
+
+  <div class="countdown">
+    <div><span id="hours">00</span><p>Hours</p></div>
+    <div><span id="minutes">00</span><p>Minutes</p></div>
+    <div><span id="seconds">00</span><p>Seconds</p></div>
+  </div>
+
+  <button class="telegram-btn" id="subscribeBtn">
+    <i class="fab fa-telegram-plane"></i> Join Telegram
+  </button>
+
+  <!-- Hidden subscriber count for logic only -->
+  <div id="subscriberCount">0</div>
+
+  <h2>Elite Queen Benefits</h2>
+  <p class="subtitle">Unlock powerful advantages & win like royalty</p>
+
+  <div class="benefits">
+    <div class="benefit-card daily-rewards">
+      <i class="fa fa-gift"></i>
+      <h3>Daily Rewards</h3>
+      <p>Exclusive gift codes & bonus drops delivered every day.</p>
+    </div>
+    <div class="benefit-card vip-support">
+      <i class="fa fa-headset"></i>
+      <h3>VIP Support</h3>
+      <p>Priority 24/7 access to gaming experts & elite team.</p>
+    </div>
+    <div class="benefit-card precision-shots">
+      <i class="fa fa-bullseye"></i>
+      <h3>Precision Shots</h3>
+      <p>Pro-level predictions with ultra win accuracy.</p>
+    </div>
+  </div>
+
+  <script>
+    // Set initial subscriber count from localStorage or 0
+    let subscriberCount = parseInt(localStorage.getItem('subscriberCount') || '0', 10);
+    const subscriberCountElem = document.getElementById('subscriberCount');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+
+    // Update the hidden subscriber count element (just for debugging or future use)
+    function updateSubscriberCount() {
+      subscriberCountElem.textContent = subscriberCount;
+    }
+    updateSubscriberCount();
+
+    subscribeBtn.addEventListener('click', function() {
+      subscriberCount++;
+      localStorage.setItem('subscriberCount', subscriberCount);
+      updateSubscriberCount();
+
+      // Fire Meta Pixel custom event "Subscribe"
+      if(window.fbq) {
+        fbq('trackCustom', 'Subscribe', {
+          subscriberCount: subscriberCount,
+          action: 'JoinTelegram'
+        });
+      }
+
+      // Open telegram channel in new tab
+      window.open('https://t.me/+3n-ad5rQbBxiMjI1', '_blank');
+    });
+
+    // Countdown timer logic
+    const targetTime = new Date().getTime() + 6 * 60 * 60 * 1000 + 10 * 60 * 1000 + 50 * 1000;
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetTime - now;
+      if(diff <= 0) {
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        return;
+      }
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minutesEl.textContent = minutes.toString().padStart(2, '0');
+      secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+  </script>
+
+</body>
+</html>

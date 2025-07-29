@@ -1,0 +1,330 @@
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: pulseGlow 2s infinite;
+  }
+
+  .crown {
+    font-size: 2.8rem;
+    animation: bounce 1.5s infinite;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: #ffd700;
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #ffd700;
+    margin-bottom: 2rem;
+    animation: glowBadge 3s ease-in-out infinite;
+  }
+
+  .profile img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 9999px;
+    border: 4px solid #ff6a00;
+    box-shadow: 0 0 25px #ff6a00;
+    margin: 1.5rem auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .profile img:hover {
+    transform: scale(1.08);
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0 2rem;
+  }
+
+  .countdown div {
+    background: #0f3460;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 90px;
+    box-shadow: 0 0 10px #0f3460;
+  }
+
+  .countdown span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+  }
+
+  .countdown p {
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #ccc;
+  }
+
+  .telegram-btn {
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    color: #000;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(0, 201, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .telegram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 201, 255, 1);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    color: #ffcc70;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .benefit-card {
+    background: #1a1a2e;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 2px solid #293462;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ff6a00;
+    border-color: #ff6a00;
+  }
+
+  .benefit-card i {
+    font-size: 2rem;
+    color: #ffcc70;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .benefit-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+
+  @keyframes glowBadge {
+    0%, 100% {
+      box-shadow: 0 0 10px #ffd700;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff9900;
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      text-shadow: 0 0 10px #ee0979;
+    }
+    50% {
+      text-shadow: 0 0 25px #ff6a00;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .countdown {
+      gap: 1rem;
+    }
+
+    .countdown div {
+      width: 75px;
+      padding: 0.7rem;
+    }
+
+    .countdown span {
+      font-size: 1.5rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .title-vip {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 15px rgba(255, 0, 102, 0.4);
+  display: inline-block;
+  animation: glowPulse 2s infinite ease-in-out;
+  margin: 1rem auto;
+}
+
+.title-vip .crown {
+  font-size: 1.8rem;
+  margin-right: 0.4rem;
+}
+
+.title-vip span {
+  color: gold;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* Animation */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 0, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 102, 0.8);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .title-vip {
+    font-size: 1.6rem;
+    padding: 0.6rem 1rem;
+  }
+  .title-vip .crown {
+    font-size: 1.4rem;
+  }
+}
+div#subscriberCount{
+  display: none;
+}
+
+.vip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #2d0050, #55007d);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.kind-icon {
+  font-size: 24px;
+}
+
+.vip-title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.vip-title span {
+  color: #ffcc00;
+}
+
+.elite-badge {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 18px;
+  color: #fff;
+  background: #1a0033;
+  border: 1px solid #8833ff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: pop 1.4s infinite ease-in-out;
+}
+
+.bounce-icon {
+  color: #ff69b4;
+  margin-right: 6px;
+  animation: bounce 1.6s infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Pop (subtle pulsing effect) */
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vip-title {
+    font-size: 22px;
+  }
+  .kind-icon {
+    font-size: 20px;
+  }
+  .elite-badge {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}
